@@ -1,10 +1,18 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from './src/screens/HomeScreen';
-import LayoutScreen from './src/screens/LayoutScreen';
+import SearchScreen from './src/screens/SearchScreen';
+import ResultScreen from './src/screens/ResultScreen';
 
-const navigator = createStackNavigator({
-  Home: HomeScreen,
-  Layout: LayoutScreen
-});
+const navigator = createStackNavigator(
+  {
+    Search: SearchScreen,
+    Results: ResultScreen
+  },
+  {
+    initialRouteName: 'Search',
+    defaultNavigationOptions: {
+      title: 'Seacrch'
+    }
+  }
+);
 
 export default createAppContainer(navigator);
